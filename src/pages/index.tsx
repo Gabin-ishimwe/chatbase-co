@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { useState } from 'react'
 // import { HiBars3,  } from 'react-icons/hi'
+import LiveDemo from '@/components/LiveDemo'
+import VideoDemo from '@/components/videoDemo'
 import { FaBars } from "react-icons/fa"
 import { IoMdClose } from 'react-icons/io'
 import ProductHunt from '../../public/images/producthunt-bot.png'
@@ -157,8 +159,9 @@ export default function Home() {
           />
         </div>
       </div>
-
-</div>
+      <VideoDemo/>
+      <LiveDemo/>
+    </div>
     </div>
   )
 }
