@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { useState } from 'react'
 // import { HiBars3,  } from 'react-icons/hi'
+import FaQs from '@/components/FaQs'
 import LiveDemo from '@/components/LiveDemo'
 import VideoDemo from '@/components/videoDemo'
 import { FaBars } from "react-icons/fa"
@@ -161,6 +162,7 @@ export default function Home() {
       </div>
       <VideoDemo/>
       <LiveDemo/>
+      <FaQs/>
     </div>
     </div>
   )
