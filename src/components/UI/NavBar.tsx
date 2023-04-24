@@ -9,7 +9,7 @@ const navigation = [
   { name: "Demo", href: "#" },
   { name: "Pricing", href: "pricing" },
   { name: "Featured Bots", href: "featured-bots" },
-  { name: "My ChatBots", href: "#" },
+  { name: "My ChatBots", href: "my-chatbots" },
 ];
 
 const inter = Inter({ subsets: ["latin"] });
