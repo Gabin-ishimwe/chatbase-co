@@ -8,7 +8,7 @@ import { IoMdClose } from "react-icons/io";
 const navigation = [
   { name: "Demo", href: "#" },
   { name: "Pricing", href: "pricing" },
-  { name: "Featured Bots", href: "#" },
+  { name: "Featured Bots", href: "featured-bots" },
   { name: "My ChatBots", href: "#" },
 ];
 
