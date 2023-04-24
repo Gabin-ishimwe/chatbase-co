@@ -22,485 +22,477 @@ const Pricing = () => {
       <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:grid-cols-4">
         <div className="rounded-lg shadow-sm divide-y divide-zinc-400 bg-zinc-100">
           <div className="p-4 flex flex-col justify-between h-full">
+            <h2 className="text-2xl leading-6 font-semibold text-black">
+              Hobby
+            </h2>
+            <div className="py-4">
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000 message credits/month
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  5 chatbots
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000,000 characters/chatbot
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Embed on unlimited websites
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Upload multiple files
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  API Access
+                </span>
+              </li>
+            </div>
             <div>
-              <h2 className="text-2xl leading-6 font-semibold text-black">
-                Hobby
-              </h2>
-              <div className="py-4">
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000 message credits/month
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    5 chatbots
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000,000 characters/chatbot
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Embed on unlimited websites
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Upload multiple files
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    API Access
-                  </span>
-                </li>
-              </div>
-              <div>
-                <p className="mt-8">
-                  <span className="text-3xl font-bold white">$19</span>
-                  <span className="text-base font-medium text-zinc-900">
-                    /month
-                  </span>
-                </p>
-                <button
-                  data-variant="flat"
-                  className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-100 bg-black"
-                  type="button">
-                  Subscribe
-                </button>
-              </div>
+              <p className="mt-8">
+                <span className="text-3xl font-bold white">$19</span>
+                <span className="text-base font-medium text-zinc-900">
+                  /month
+                </span>
+              </p>
+              <button
+                data-variant="flat"
+                className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black"
+                type="button">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
         <div className="rounded-lg shadow-sm divide-y divide-zinc-400 bg-zinc-100">
           <div className="p-4 flex flex-col justify-between h-full">
+            <h2 className="text-2xl leading-6 font-semibold text-black">
+              Hobby
+            </h2>
+            <div className="py-4">
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000 message credits/month
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  5 chatbots
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000,000 characters/chatbot
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Embed on unlimited websites
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Upload multiple files
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  API Access
+                </span>
+              </li>
+            </div>
             <div>
-              <h2 className="text-2xl leading-6 font-semibold text-black">
-                Hobby
-              </h2>
-              <div className="py-4">
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000 message credits/month
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    5 chatbots
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000,000 characters/chatbot
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Embed on unlimited websites
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Upload multiple files
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    API Access
-                  </span>
-                </li>
-              </div>
-              <div>
-                <p className="mt-8">
-                  <span className="text-3xl font-bold white">$19</span>
-                  <span className="text-base font-medium text-zinc-900">
-                    /month
-                  </span>
-                </p>
-                <button
-                  data-variant="flat"
-                  className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-100 bg-black"
-                  type="button">
-                  Subscribe
-                </button>
-              </div>
+              <p className="mt-8">
+                <span className="text-3xl font-bold white">$19</span>
+                <span className="text-base font-medium text-zinc-900">
+                  /month
+                </span>
+              </p>
+              <button
+                data-variant="flat"
+                className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black"
+                type="button">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
         <div className="rounded-lg shadow-sm divide-y divide-zinc-400 bg-zinc-100">
           <div className="p-4 flex flex-col justify-between h-full">
+            <h2 className="text-2xl leading-6 font-semibold text-black">
+              Hobby
+            </h2>
+            <div className="py-4">
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000 message credits/month
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  5 chatbots
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000,000 characters/chatbot
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Embed on unlimited websites
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Upload multiple files
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  API Access
+                </span>
+              </li>
+            </div>
             <div>
-              <h2 className="text-2xl leading-6 font-semibold text-black">
-                Hobby
-              </h2>
-              <div className="py-4">
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000 message credits/month
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    5 chatbots
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000,000 characters/chatbot
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Embed on unlimited websites
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Upload multiple files
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    API Access
-                  </span>
-                </li>
-              </div>
-              <div>
-                <p className="mt-8">
-                  <span className="text-3xl font-bold white">$19</span>
-                  <span className="text-base font-medium text-zinc-900">
-                    /month
-                  </span>
-                </p>
-                <button
-                  data-variant="flat"
-                  className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-100 bg-black"
-                  type="button">
-                  Subscribe
-                </button>
-              </div>
+              <p className="mt-8">
+                <span className="text-3xl font-bold white">$19</span>
+                <span className="text-base font-medium text-zinc-900">
+                  /month
+                </span>
+              </p>
+              <button
+                data-variant="flat"
+                className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black"
+                type="button">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
         <div className="rounded-lg shadow-sm divide-y divide-zinc-400 bg-zinc-100">
           <div className="p-4 flex flex-col justify-between h-full">
+            <h2 className="text-2xl leading-6 font-semibold text-black">
+              Hobby
+            </h2>
+            <div className="py-4">
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000 message credits/month
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  5 chatbots
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  2,000,000 characters/chatbot
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Embed on unlimited websites
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  Upload multiple files
+                </span>
+              </li>
+              <li className="flex space-x-2 mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-5 flex-shrink-0 text-green-500">
+                  <path
+                    fillRule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clipRule="evenodd"></path>
+                </svg>
+                <span className="text-sm font-semibold text-gray-700">
+                  API Access
+                </span>
+              </li>
+            </div>
             <div>
-              <h2 className="text-2xl leading-6 font-semibold text-black">
-                Hobby
-              </h2>
-              <div className="py-4">
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000 message credits/month
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    5 chatbots
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    2,000,000 characters/chatbot
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Embed on unlimited websites
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    Upload multiple files
-                  </span>
-                </li>
-                <li className="flex space-x-2 mb-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-shrink-0 text-green-500">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <span className="text-sm font-semibold text-gray-700">
-                    API Access
-                  </span>
-                </li>
-              </div>
-              <div>
-                <p className="mt-8">
-                  <span className="text-3xl font-bold white">$19</span>
-                  <span className="text-base font-medium text-zinc-900">
-                    /month
-                  </span>
-                </p>
-                <button
-                  data-variant="flat"
-                  className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-100 bg-black"
-                  type="button">
-                  Subscribe
-                </button>
-              </div>
+              <p className="mt-8">
+                <span className="text-3xl font-bold white">$19</span>
+                <span className="text-base font-medium text-zinc-900">
+                  /month
+                </span>
+              </p>
+              <button
+                data-variant="flat"
+                className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black"
+                type="button">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
