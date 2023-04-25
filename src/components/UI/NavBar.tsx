@@ -29,7 +29,9 @@ const NavBar = () => {
             alt=""
           />
         </a> */}
-          <span className="text-2xl font-bold">Chatbase Co</span>
+          <Link href={"/"} className="text-2xl font-bold">
+            Chatbase Co
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
