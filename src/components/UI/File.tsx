@@ -1,9 +1,13 @@
-const FileUpload = () => {
+type Props = {
+  changeOption: (value: string) => void;
+};
+const FileUpload = ({ changeOption }: Props) => {
   return (
     <>
       <div className="m-auto max-w-sm">
         <button
           type="button"
+          onClick={() => changeOption("")}
           className="flex items-center rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"

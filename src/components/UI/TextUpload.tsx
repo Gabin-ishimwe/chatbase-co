@@ -1,8 +1,13 @@
-const TextUpload = () => {
+type Props = {
+  changeOption: (value: string) => void;
+};
+
+const TextUpload = ({ changeOption }: Props) => {
   return (
     <>
       <div>
         <button
+          onClick={() => changeOption("")}
           type="button"
           className="flex items-center rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300">
           <svg
