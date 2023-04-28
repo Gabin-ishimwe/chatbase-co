@@ -10,16 +10,14 @@ const SignIn = () => {
   const signInMutation = useMutation({
     mutationFn: signIn,
     onSuccess: (data, variables, context) => {
-      if (data.status <= 299 && data.status >= 200) {
+      if (data.message === "User logged in successfully") {
         setToastMessage((msg) => (msg = data.message));
         setToastColor(true);
         setToast(true);
         router.push("/my-chatbots");
-      } else if (data.status <= 499 && data.status >= 400) {
-        setToastMessage((msg) => (msg = data.message));
-        setToast(true);
       } else {
         setToastMessage((msg) => (msg = data.message));
+        setToastColor(false);
         setToast(true);
       }
     },
@@ -48,7 +46,11 @@ const SignIn = () => {
       {toast && (
         <div className="absolute bottom-14 left-1/2 -translate-x-1/2">
           <div
-            className="max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg"
+            className={
+              toastColor
+                ? "max-w-xs bg-green-500 text-sm text-white rounded-md shadow-lg"
+                : "max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg"
+            }
             role="alert">
             <div className="flex p-4 gap-4 items-center justify-between">
               <p className="grow">{toastMessage}</p>

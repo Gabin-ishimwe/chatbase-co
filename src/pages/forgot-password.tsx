@@ -8,17 +8,12 @@ const ForgotPassword = () => {
   const forgotPasswordMutation = useMutation({
     mutationFn: forgotPassword,
     onSuccess: (data, variables, context) => {
-      if (data.status <= 299 && data.status >= 200) {
-        console.log(data);
+      if (data.message === "Email sent to your inbox") {
         setToastMessage((msg) => (msg = data.message));
         setToastColor(true);
         setToast(true);
-      } else if (data.status <= 499 && data.status >= 400) {
-        setToastMessage((msg) => (msg = data.message));
-        setToastColor(false);
-        setToast(true);
+        router.push("/signin");
       } else {
-        console.log(data);
         setToastMessage((msg) => (msg = data.message));
         setToastColor(false);
         setToast(true);
@@ -43,7 +38,11 @@ const ForgotPassword = () => {
       {toast && (
         <div className="absolute bottom-14 left-1/2 -translate-x-1/2">
           <div
-            className="max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg"
+            className={
+              toastColor
+                ? "max-w-xs bg-green-500 text-sm text-white rounded-md shadow-lg"
+                : "max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg"
+            }
             role="alert">
             <div className="flex p-4 gap-4 items-center justify-between">
               <p className="grow">{toastMessage}</p>
