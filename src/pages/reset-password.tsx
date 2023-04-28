@@ -1,40 +1,49 @@
-import { forgotPassword } from "@/api/forgotPassword";
+import { resetPassword } from "@/api/resetPassword";
 import { useMutation } from "@tanstack/react-query";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-const ForgotPassword = () => {
+
+const ResetPassword = () => {
   const router = useRouter();
-  const forgotPasswordMutation = useMutation({
-    mutationFn: forgotPassword,
+  const query = router.query;
+  const userId = query.userId as string;
+  const token = query.token as string;
+  console.log(userId);
+  const resetPasswordMutation = useMutation({
+    mutationFn: resetPassword,
     onSuccess: (data, variables, context) => {
       if (data.status <= 299 && data.status >= 200) {
-        console.log(data);
         setToastMessage((msg) => (msg = data.message));
         setToastColor(true);
         setToast(true);
+        router.push("/signin");
       } else if (data.status <= 499 && data.status >= 400) {
         setToastMessage((msg) => (msg = data.message));
-        setToastColor(false);
         setToast(true);
       } else {
-        console.log(data);
         setToastMessage((msg) => (msg = data.message));
-        setToastColor(false);
         setToast(true);
       }
     },
   });
-  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [toast, setToast] = React.useState(false);
   const changeToast = () => setToast((toast) => (toast = false));
   const [toastMessage, setToastMessage] = React.useState("");
   const [toastColor, setToastColor] = React.useState(false);
+  const handleChangePassword = (value: string) =>
+    setPassword((password) => (password = value));
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    if (email.trim() !== "") {
-      forgotPasswordMutation.mutate({
-        email,
+    if (
+      password.trim() !== "" &&
+      token?.trim() !== undefined &&
+      userId?.trim() !== undefined
+    ) {
+      resetPasswordMutation.mutate({
+        userId: userId as string,
+        token: token as string,
+        newPassword: password,
       });
     }
   };
@@ -75,37 +84,33 @@ const ForgotPassword = () => {
           </div>
         </div>
       )}
-      <div className="flex justify-center pb-64">
+
+      <div className="flex justify-center">
         <div className="flex flex-col justify-between max-w-lg px-3 mx-auto w-80">
-          <div className="flex flex-col">
+          <div className="flex flex-col pb-64">
             <form>
-              <div className="flex flex-col gap-1">
-                <label className="text-zinc-500" htmlFor="email">
-                  Email address
+              <div className="flex flex-col gap-1 my-4">
+                <label className="text-zinc-500" htmlFor="password">
+                  Reset Password
                 </label>
                 <input
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  placeholder="Your email address"
+                  name="password"
+                  value={password}
+                  onChange={(e) => handleChangePassword(e.target.value)}
+                  type="password"
+                  placeholder="Enter your new password"
                   className="p-2 border-zinc-300 hover:border-zinc-900 border rounded focus:outline-none"
                 />
               </div>
               <button
                 onClick={(e) => handleSubmit(e)}
                 data-variant="flat"
-                className="mb-8 mt-3 w-full rounded-md py-3 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black">
-                {forgotPasswordMutation.isLoading
+                className="mb-8 mt-2 w-full rounded-md py-3 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black">
+                {resetPasswordMutation.isLoading
                   ? "Loading..."
-                  : "Forgot password"}
+                  : "Reset password"}
               </button>
             </form>
-            <Link
-              href={"signin"}
-              className="text-center text-sm text-zinc-500 underline">
-              Arleady have an account? Signin
-            </Link>
           </div>
         </div>
       </div>
@@ -113,4 +118,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ResetPassword;
