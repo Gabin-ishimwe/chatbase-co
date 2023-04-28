@@ -128,6 +128,11 @@ const SignIn = () => {
               className="text-center text-sm text-zinc-500 underline">
               Don&apos;t have an account? Signup
             </Link>
+            <Link
+              href={"forgot-password"}
+              className="text-center text-sm text-zinc-500 underline pt-3">
+              Forgot your password?
+            </Link>
           </div>
         </div>
       </div>

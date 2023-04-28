@@ -1,50 +1,40 @@
-import { signUp } from "@/api/signUp";
+import { forgotPassword } from "@/api/forgotPassword";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { FcGoogle } from "react-icons/fc";
-
-const SignUp = () => {
+const ForgotPassword = () => {
   const router = useRouter();
-  const signUpMutation = useMutation({
-    mutationFn: signUp,
+  const forgotPasswordMutation = useMutation({
+    mutationFn: forgotPassword,
     onSuccess: (data, variables, context) => {
       if (data.status <= 299 && data.status >= 200) {
+        console.log(data);
         setToastMessage((msg) => (msg = data.message));
         setToastColor(true);
         setToast(true);
-        router.push("/my-chatbots");
       } else if (data.status <= 499 && data.status >= 400) {
         setToastMessage((msg) => (msg = data.message));
+        setToastColor(false);
         setToast(true);
       } else {
+        console.log(data);
         setToastMessage((msg) => (msg = data.message));
+        setToastColor(false);
         setToast(true);
       }
     },
   });
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
   const [toast, setToast] = React.useState(false);
   const changeToast = () => setToast((toast) => (toast = false));
   const [toastMessage, setToastMessage] = React.useState("");
   const [toastColor, setToastColor] = React.useState(false);
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    if (
-      firstName.trim() !== "" &&
-      lastName.trim() !== "" &&
-      email.trim() !== "" &&
-      password.trim() !== ""
-    ) {
-      signUpMutation.mutate({
-        firstName,
-        lastName,
+    if (email.trim() !== "") {
+      forgotPasswordMutation.mutate({
         email,
-        password,
       });
     }
   };
@@ -88,38 +78,7 @@ const SignUp = () => {
       <div className="flex justify-center">
         <div className="flex flex-col justify-between max-w-lg px-3 mx-auto w-80">
           <div className="flex flex-col">
-            <button className="bg-white hover:bg-gray-200 border-zinc-300 border rounded flex justify-center items-center space-x-2 py-2">
-              <FcGoogle className="text-xl" />
-              <span className="text-zinc-500 text-sm">Sign in with Google</span>
-            </button>
-            <hr className="text-zinc-500 my-8" />
             <form>
-              <div className="flex flex-col gap-1 mb-4">
-                <label className="text-zinc-500" htmlFor="firstName">
-                  First name
-                </label>
-                <input
-                  name="firstName"
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="First name"
-                  className="p-2 border-zinc-300 hover:border-zinc-900 border rounded focus:outline-none"
-                />
-              </div>
-              <div className="flex flex-col gap-1 mb-4">
-                <label className="text-zinc-500" htmlFor="lastName">
-                  Last name
-                </label>
-                <input
-                  name="lastName"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  type="text"
-                  placeholder="Last name"
-                  className="p-2 border-zinc-300 hover:border-zinc-900 border rounded focus:outline-none"
-                />
-              </div>
               <div className="flex flex-col gap-1">
                 <label className="text-zinc-500" htmlFor="email">
                   Email address
@@ -133,35 +92,17 @@ const SignUp = () => {
                   className="p-2 border-zinc-300 hover:border-zinc-900 border rounded focus:outline-none"
                 />
               </div>
-              <div className="flex flex-col gap-1 my-4">
-                <label className="text-zinc-500" htmlFor="password">
-                  Create password
-                </label>
-                <input
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                  placeholder="Enter your password"
-                  className="p-2 border-zinc-300 hover:border-zinc-900 border rounded focus:outline-none"
-                />
-              </div>
               <button
                 onClick={(e) => handleSubmit(e)}
                 data-variant="flat"
-                className="mb-8 mt-2 w-full rounded-md py-3 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black">
-                {signUpMutation.isLoading ? "Loading..." : "Sign In"}
+                className="mb-8 mt-3 w-full rounded-md py-3 text-sm font-semibold text-white text-center hover:bg-zinc-800 bg-black">
+                {forgotPasswordMutation.isLoading ? "Loading..." : "Sign In"}
               </button>
             </form>
             <Link
               href={"signin"}
               className="text-center text-sm text-zinc-500 underline">
               Arleady have an account? Signin
-            </Link>
-            <Link
-              href={"forgot-password"}
-              className="text-center text-sm text-zinc-500 underline pt-3">
-              Forgot your password?
             </Link>
           </div>
         </div>
@@ -170,4 +111,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default ForgotPassword;

@@ -1,4 +1,4 @@
-export const signIn = async ({ email }: { email: string }) => {
+export const forgotPassword = async ({ email }: { email: string }) => {
   try {
     const response = await fetch(
       "https://chatbase-be.onrender.com/api/v1/auth/forgot-password",
