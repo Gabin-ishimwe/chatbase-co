@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Testimonials = () => {
   return (
     <div className="relative isolate bg-white pt-24 pb-32 sm:pt-32">
@@ -49,7 +51,7 @@ const Testimonials = () => {
               </p>
             </blockquote>
             <figcaption className="flex items-center gap-x-4 border-t border-gray-900/10 py-4 px-6">
-              <img
+              <Image
                 className="h-10 w-10 flex-none rounded-full bg-gray-50"
                 src="https://pbs.twimg.com/profile_images/1257618949665173505/izjTnliK_400x400.jpg"
                 alt=""
@@ -70,7 +72,7 @@ const Testimonials = () => {
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-x-4">
-                  <img
+                  <Image
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1642428370091925505/xknh7v7j_400x400.jpg"
                     alt=""
@@ -90,7 +92,7 @@ const Testimonials = () => {
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-x-4">
-                  <img
+                  <Image
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1237045471257952256/Wvh-XjSr_400x400.jpg"
                     alt=""
@@ -110,7 +112,7 @@ const Testimonials = () => {
                   <p>“This is awesome, thanks for building it!”</p>
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-x-4">
-                  <img
+                  <Image
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1379817647139737600/YHL9uBk0_400x400.jpg"
                     alt=""
@@ -131,7 +133,7 @@ const Testimonials = () => {
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-x-4">
-                  <img
+                  <Image
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1475104326930649089/OI1bGmxG_400x400.png"
                     alt=""
