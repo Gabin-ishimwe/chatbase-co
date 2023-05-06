@@ -2,7 +2,7 @@ const Pricing = () => {
   return (
     <div className="sm:flex sm:flex-col sm:align-center">
       <h1 className="text-4xl font-extrabold text-black sm:text-center sm:text-6xl mt-14">
-        Pricing Plans
+        Pricing Plans - testing
       </h1>
       <p className="mt-6 text-center">
         Get 2 months for free by subscribing yearly!
