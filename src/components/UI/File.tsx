@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
+
 type Props = {
   changeOption: (value: string) => void;
 };
 const FileUpload = ({ changeOption }: Props) => {
+  const route = useRouter();
   return (
     <>
       <div className="m-auto max-w-sm">
@@ -53,6 +56,10 @@ const FileUpload = ({ changeOption }: Props) => {
         <button
           data-variant="flat"
           className="mb-8 w-full rounded-md py-2 text-sm font-semibold text-white text-center bg-black"
+          onClick={(e) => {
+            e.preventDefault();
+            route.push("/chat-dashboard");
+          }}
           type="submit">
           Create Chatbot
         </button>
