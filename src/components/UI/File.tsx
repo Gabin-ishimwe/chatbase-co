@@ -58,7 +58,7 @@ const FileUpload = ({ changeOption }: Props) => {
           className="mb-8 w-full rounded-md py-2 text-sm font-semibold text-white text-center bg-black"
           onClick={(e) => {
             e.preventDefault();
-            route.push("/chat-dashboard");
+            route.push("/chatbot");
           }}
           type="submit">
           Create Chatbot

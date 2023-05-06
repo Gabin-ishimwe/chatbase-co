@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
+
 type Props = {
   changeOption: (value: string) => void;
 };
 
 const Webscrapt = ({ changeOption }: Props) => {
+  const route = useRouter();
   return (
     <>
       <div>
@@ -114,6 +117,10 @@ const Webscrapt = ({ changeOption }: Props) => {
       <div className="py-8 max-w-sm m-auto">
         <button
           data-variant="flat"
+          onClick={(e) => {
+            e.preventDefault();
+            route.push("/chatbot");
+          }}
           className="mb-8 w-full rounded-md py-2 text-sm font-semibold text-white text-center bg-black"
           type="submit">
           Create Chatbot
