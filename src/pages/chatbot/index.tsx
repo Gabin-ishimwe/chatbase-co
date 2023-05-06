@@ -7,7 +7,7 @@ const Chatbot = () => {
   const navItems = [
     {
       name: "chat",
-      path: "chatbot/chat",
+      path: "chatbot",
     },
     {
       name: "Settings",
@@ -19,16 +19,7 @@ const Chatbot = () => {
     },
     {
       name: "Manage Resources",
-      path: "chatbot/manage-resources",
-    },
-    {
-      name: "Embedding on website",
-      path: "chatbot/embedding",
-    },
-    { name: "Share Chatbot", path: "chatbot/share-bot" },
-    {
-      name: "Delete Chatbot",
-      path: "chatbot/delete-chatbot",
+      path: "chatbot/manage-source",
     },
   ];
   return (
@@ -43,7 +34,7 @@ const Chatbot = () => {
               {navItems.map((item, index) => (
                 <Link
                   key={index}
-                  href="#"
+                  href={item.path}
                   className={`${
                     item.path == router.pathname
                       ? "border-indigo-500 text-gray-900"
@@ -52,6 +43,15 @@ const Chatbot = () => {
                   {item.name}
                 </Link>
               ))}
+              <button className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">
+                Embed on website
+              </button>
+              <button className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">
+                Share Chatbot
+              </button>
+              <button className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">
+                Delete Chatbot
+              </button>
             </div>
           </div>
         </div>

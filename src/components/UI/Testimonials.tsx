@@ -54,6 +54,8 @@ const Testimonials = () => {
               <Image
                 className="h-10 w-10 flex-none rounded-full bg-gray-50"
                 src="https://pbs.twimg.com/profile_images/1257618949665173505/izjTnliK_400x400.jpg"
+                width={400}
+                height={400}
                 alt=""
               />
               <div className="flex-auto">
@@ -76,6 +78,8 @@ const Testimonials = () => {
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1642428370091925505/xknh7v7j_400x400.jpg"
                     alt=""
+                    width={400}
+                    height={400}
                   />
                   <div>
                     <div className="font-semibold">Jacob Andreou</div>
@@ -96,6 +100,8 @@ const Testimonials = () => {
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1237045471257952256/Wvh-XjSr_400x400.jpg"
                     alt=""
+                    width={400}
+                    height={400}
                   />
                   <div>
                     <div className="font-semibold">Greg Kogan</div>
@@ -116,6 +122,8 @@ const Testimonials = () => {
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1379817647139737600/YHL9uBk0_400x400.jpg"
                     alt=""
+                    width={400}
+                    height={400}
                   />
                   <div>
                     <div className="font-semibold">Logan.GPT</div>
@@ -137,6 +145,8 @@ const Testimonials = () => {
                     className="h-10 w-10 rounded-full bg-gray-50"
                     src="https://pbs.twimg.com/profile_images/1475104326930649089/OI1bGmxG_400x400.png"
                     alt=""
+                    width={400}
+                    height={400}
                   />
                   <div>
                     <div className="font-semibold">Bence ☺︎ ☻</div>
