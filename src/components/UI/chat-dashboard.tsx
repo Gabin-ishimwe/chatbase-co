@@ -10,11 +10,6 @@ const ChatDashoard = () => {
   ]);
   const [loading, setLoading] = React.useState(false);
 
-  const messagesEndRef = React.useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
   // send api request
   const handleSend = (msg: any) => {
     console.log("sending message...");
@@ -32,9 +27,6 @@ const ChatDashoard = () => {
       },
     ]);
   };
-  React.useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
   return (
     <div className="">
       <Chat
@@ -43,7 +35,7 @@ const ChatDashoard = () => {
         onSend={handleSend}
         onReset={handleReset}
       />
-      <div ref={messagesEndRef} />
+      {/* <div ref={messagesEndRef} /> */}
     </div>
   );
 };

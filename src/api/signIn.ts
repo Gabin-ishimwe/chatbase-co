@@ -7,7 +7,7 @@ export const signIn = async ({
 }) => {
   try {
     const response = await fetch(
-      "https://chatbase-be.onrender.com/api/v1/auth/signin",
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/auth/signin`,
       {
         method: "POST",
         headers: {

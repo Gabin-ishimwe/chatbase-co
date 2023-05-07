@@ -5,6 +5,13 @@ interface Props {
 }
 
 export const ChatMessage: FC<Props> = ({ message }) => {
+  // const messagesEndRef = React.useRef<HTMLDivElement>(null);
+  // const scrollToBottom = () => {
+  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  // };
+  // React.useEffect(() => {
+  //   scrollToBottom();
+  // }, [message]);
   return (
     <div
       className={`flex flex-col ${

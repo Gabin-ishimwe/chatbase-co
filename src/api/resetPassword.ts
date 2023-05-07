@@ -9,7 +9,7 @@ export const resetPassword = async ({
 }) => {
   try {
     const response = await fetch(
-      "https://chatbase-be.onrender.com/api/v1/auth/change-password",
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/auth/change-password`,
       {
         method: "POST",
         headers: {

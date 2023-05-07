@@ -14,6 +14,7 @@ const SignUp = () => {
         setToastMessage((msg) => (msg = data.message));
         setToastColor(true);
         setToast(true);
+        localStorage.setItem("AUTH_TOKEN", data.accessToken);
         router.push("/my-chatbots");
       } else {
         setToastMessage((msg) => (msg = data.message));

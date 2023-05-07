@@ -1,6 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
 
 const MyChatBot = () => {
+  const route = useRouter();
+
+  React.useEffect(() => {
+    if (localStorage.getItem("AUTH_TOKEN")) return;
+    route.push("/signin");
+  }, []);
   return (
     <div className="pt-14 pb-72">
       <div className="max-w-3xl w-full m-auto flex justify-between items-center">
