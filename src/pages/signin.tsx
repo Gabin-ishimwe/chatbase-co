@@ -15,7 +15,9 @@ const SignIn = () => {
         setToastColor(true);
         setToast(true);
         localStorage.setItem("AUTH_TOKEN", data.accessToken);
-        router.push("/my-chatbots");
+        router.push(
+          "/my-chatbots?token=" + encodeURIComponent(data.accessToken)
+        );
       } else {
         setToastMessage((msg) => (msg = data.message));
         setToastColor(false);

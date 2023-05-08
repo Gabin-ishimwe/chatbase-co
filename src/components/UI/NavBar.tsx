@@ -1,21 +1,29 @@
 import { Dialog } from "@headlessui/react";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-
-const navigation = [
-  { name: "Demo", href: "#" },
-  { name: "Pricing", href: "pricing" },
-  { name: "Featured Bots", href: "featured-bots" },
-  { name: "My ChatBots", href: "my-chatbots" },
-];
 
 const inter = Inter({ subsets: ["latin"] });
 
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [token, setToken] = useState("");
+
+  const navigation = [
+    { name: "Demo", href: "#" },
+    { name: "Pricing", href: "pricing" },
+    { name: "Featured Bots", href: "featured-bots" },
+    {
+      name: "My ChatBots",
+      href: "my-chatbots?token=" + encodeURIComponent(token),
+    },
+  ];
+  useEffect(() => {
+    setToken(localStorage.getItem("AUTH_TOKEN") as string);
+  }, [token]);
+
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
