@@ -23,26 +23,39 @@ const MyChatBot = ({ data, error }: { data: any; error: any }) => {
       </div>
       <div className="py-4">
         {data ? (
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-8 max-w-3xl w-full m-auto my-8">
-            {data.data.map((bot: any, index: number) => (
-              <Link href={"/chatbot/" + bot.id} key={index}>
-                <div className="flex flex-col justify-between h-full border rounded relative">
-                  <Image
-                    src={bot.avatar}
-                    alt={bot.user.firstName}
-                    width={200}
-                    height={282}
-                    className="border-none m-auto p-4"
-                  />
-                  <div className="px-1">
-                    <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                      {bot.user.firstName + " " + bot.user.lastName}
-                    </h3>
-                  </div>
-                </div>
+          <>
+            <div className="py-2 mx-auto max-w-3xl">
+              <Link href="/create-new-chatbot">
+                <button
+                  data-variant="flat"
+                  className="rounded-md py-2 text-sm text-white text-center bg-black px-4"
+                  type="button">
+                  {" "}
+                  New Chatbot
+                </button>
               </Link>
-            ))}
-          </div>
+            </div>
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-8 max-w-3xl w-full m-auto my-8">
+              {data.data.map((bot: any, index: number) => (
+                <Link href={"/chatbot/" + bot.id} key={index}>
+                  <div className="flex flex-col justify-between h-full border rounded relative">
+                    <Image
+                      src={bot.avatar}
+                      alt={bot.user.firstName}
+                      width={200}
+                      height={282}
+                      className="border-none m-auto p-4"
+                    />
+                    <div className="px-1">
+                      <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
+                        {bot.user.firstName + " " + bot.user.lastName}
+                      </h3>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </>
         ) : (
           <div className="flex justify-center">
             {toast && (
