@@ -72,12 +72,15 @@ const ChatBotLayout = ({
 export const getServerSideProps = async (context: any) => {
   const urlToken = decodeURIComponent(context.query.token);
   const botId = decodeURIComponent(context.params.id);
-  const res = await fetch("http://localhost:3001/api/v1/chatbot/" + botId, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${urlToken}`,
-    },
-  });
+  const res = await fetch(
+    "https://chatbase-be.onrender.com/api/v1/chatbot/" + botId,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${urlToken}`,
+      },
+    }
+  );
   const data = await res.json();
   if (data.message === "User bot")
     return {

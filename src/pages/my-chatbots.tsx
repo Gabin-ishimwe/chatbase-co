@@ -114,7 +114,7 @@ export async function getServerSideProps(context: any) {
   } catch (error) {}
   const urlToken = decodeURIComponent(context.query.token);
   console.log(urlToken, "token");
-  const res = await fetch("http://localhost:3001/api/v1/chatbot", {
+  const res = await fetch("https://chatbase-be.onrender.com/api/v1/chatbot", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${urlToken}`,
