@@ -16,6 +16,7 @@ export const Chat: FC<Props> = ({ messages, loading, onSend, onReset }) => {
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  console.log("load state ", loading);
   React.useEffect(() => {
     scrollToBottom();
   }, [messages]);
