@@ -55,12 +55,12 @@ const Webscrapt = ({ changeOption }: Props) => {
               files on the website). Has to be server side rendered website
             </div>
           </div>
-          <div className="flex items-center my-4">
+          {/* <div className="flex items-center my-4">
             <hr className="w-full border-gray-300 border-t" />
             <span className="px-2 text-gray-600 whitespace-nowrap">OR</span>
             <hr className="w-full border-gray-300 border-t" />
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <label
               htmlFor="sitemap"
               className="block text-sm font-medium leading-6 text-gray-900 my-2">
@@ -82,8 +82,8 @@ const Webscrapt = ({ changeOption }: Props) => {
                 </button>
               </div>
             </div>
-          </div>
-          <div className="mt-14">
+          </div> */}
+          <div className="mt-8">
             <label
               htmlFor="exluded_urls"
               className="block text-sm font-medium leading-6 text-gray-900 my-2">

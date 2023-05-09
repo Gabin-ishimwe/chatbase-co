@@ -1,15 +1,38 @@
+import { fetchUserChatBots } from "@/api/chatBots";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
-const MyChatBot = ({ data, error }: { data: any; error: any }) => {
+const MyChatBot = () => {
   const route = useRouter();
-  const [toast, setToast] = React.useState(true);
+  const [token, setToken] = React.useState("");
+  const [data, setData] = React.useState<any>([]);
+  const myChatBotQuery = useQuery({
+    queryKey: ["userChatBots", token],
+    enabled: token != "",
+    queryFn: () => fetchUserChatBots({ token: token as unknown as string }),
+    onSuccess: (res) => {
+      if (res.message == "All chatbots") {
+        console.log(res);
+        setData(res.data);
+        console.log("new data", data);
+      } else {
+        // call toasters
+        console.log(res);
+        setToast(true);
+        setToastMessage(res.message);
+      }
+    },
+  });
+  const [toast, setToast] = React.useState(false);
   const changeToast = () => setToast((toast) => (toast = false));
+  const [toastMessage, setToastMessage] = React.useState("");
 
   React.useEffect(() => {
     if (localStorage.getItem("AUTH_TOKEN")) return;
+    setToken(localStorage.getItem("AUTH_TOKEN") as string);
     route.push("/signin");
   }, []);
 
@@ -22,7 +45,7 @@ const MyChatBot = ({ data, error }: { data: any; error: any }) => {
         </h1>
       </div>
       <div className="py-4">
-        {data ? (
+        {!myChatBotQuery.isLoading ? (
           <>
             <div className="py-2 mx-auto max-w-3xl">
               <Link href="/create-new-chatbot">
@@ -36,28 +59,29 @@ const MyChatBot = ({ data, error }: { data: any; error: any }) => {
               </Link>
             </div>
             <div className="grid grid-cols-3 md:grid-cols-4 gap-8 max-w-3xl w-full m-auto my-8">
-              {data.data.map((bot: any, index: number) => (
-                <Link href={"/chatbot/" + bot.id} key={index}>
-                  <div className="flex flex-col justify-between h-full border rounded relative">
-                    <Image
-                      src={bot.avatar}
-                      alt={bot.user.firstName}
-                      width={200}
-                      height={282}
-                      className="border-none m-auto p-4"
-                    />
-                    <div className="px-1">
-                      <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                        {bot.user.firstName + " " + bot.user.lastName}
-                      </h3>
+              {data.length > 0 &&
+                data.map((bot: any, index: number) => (
+                  <Link href={"/chatbot/" + bot.id} key={index}>
+                    <div className="flex flex-col justify-between h-full border rounded relative">
+                      <Image
+                        src={bot.avatar}
+                        alt={bot.user.firstName}
+                        width={200}
+                        height={282}
+                        className="border-none m-auto p-4"
+                      />
+                      <div className="px-1">
+                        <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
+                          {bot.user.firstName + " " + bot.user.lastName}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
             </div>
           </>
         ) : (
-          <div className="flex justify-center">
+          <>
             {toast && (
               <div className="absolute bottom-14 left-1/2 -translate-x-1/2">
                 <div
@@ -66,7 +90,7 @@ const MyChatBot = ({ data, error }: { data: any; error: any }) => {
                   }
                   role="alert">
                   <div className="flex p-4 gap-4 items-center justify-between">
-                    <p className="grow">{error}</p>
+                    <p className="grow">{toastMessage}</p>
                     <div className="ml-auto">
                       <button
                         type="button"
@@ -93,47 +117,60 @@ const MyChatBot = ({ data, error }: { data: any; error: any }) => {
                 </div>
               </div>
             )}
-            <Link href="/create-new-chatbot">
-              <button
-                data-variant="flat"
-                className="rounded-md py-2 text-sm text-white text-center bg-black px-4"
-                type="button">
-                {" "}
-                New Chatbot
-              </button>
-            </Link>
-          </div>
+
+            <div className="py-2 mx-auto max-w-3xl">
+              <Link href="/create-new-chatbot">
+                <button
+                  data-variant="flat"
+                  className="rounded-md py-2 text-sm text-white text-center bg-black px-4"
+                  type="button">
+                  {" "}
+                  New Chatbot
+                </button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-8 max-w-3xl w-full m-auto my-8">
+              {[1, 2, 3, 4].map((bot: any, index: number) => (
+                <div
+                  className="flex flex-col justify-between h-[280px] w-full border rounded relative space-y-4 p-4"
+                  key={index}>
+                  <div className="basis-[80%] w-full bg-gray-200 rounded-md dark:bg-gray-700"></div>
+                  <div className="basis-[20%] w-full bg-gray-200 rounded-md dark:bg-gray-700"></div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>
   );
 };
 
-export async function getServerSideProps(context: any) {
-  try {
-  } catch (error) {}
-  const urlToken = decodeURIComponent(context.query.token);
-  console.log(urlToken, "token");
-  const res = await fetch("https://chatbase-be.onrender.com/api/v1/chatbot", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${urlToken}`,
-    },
-  });
-  const data = await res.json();
-  if (data.message !== "All chatbots")
-    return {
-      props: {
-        error: data.message,
-        data: null,
-      },
-    };
+// export async function getServerSideProps(context: any) {
+//   try {
+//   } catch (error) {}
+//   const urlToken = decodeURIComponent(context.query.token);
+//   console.log(urlToken, "token");
+//   const res = await fetch("https://chatbase-be.onrender.com/api/v1/chatbot", {
+//     method: "GET",
+//     headers: {
+//       Authorization: `Bearer ${urlToken}`,
+//     },
+//   });
+//   const data = await res.json();
+//   if (data.message !== "All chatbots")
+//     return {
+//       props: {
+//         error: data.message,
+//         data: null,
+//       },
+//     };
 
-  return {
-    props: {
-      data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
 
 export default MyChatBot;

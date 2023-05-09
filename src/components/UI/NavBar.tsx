@@ -17,7 +17,7 @@ const NavBar = () => {
     { name: "Featured Bots", href: "featured-bots" },
     {
       name: "My ChatBots",
-      href: "my-chatbots?token=" + encodeURIComponent(token),
+      href: "my-chatbots",
     },
   ];
   useEffect(() => {
