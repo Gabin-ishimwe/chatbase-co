@@ -1,4 +1,4 @@
-import { Chat } from "@/components/Chat/Chat";
+import { ChatInput } from "@/components/Chat/ChatInput";
 import ChatBotLayout from "@/components/ChatBotLayout";
 import React from "react";
 import { SketchPicker } from "react-color";
@@ -367,7 +367,27 @@ const Settings = () => {
                 </div>
               </div>
               <div className="flex-1">
-                <Chat
+                <div className="w-full rounded h-[38rem] flex flex-col justify-between mb-4 overflow-auto border-zinc-200 border px-2 py-2 ">
+                  <div>
+                    <div className="float-left clear-both mr-8">
+                      <div className="float-right mb-3 overflow-auto rounded-lg py-3 px-4 bg-[#F4F4F5]">
+                        <p>Hi! What can I help you with?</p>
+                      </div>
+                    </div>
+                    <div className="float-right clear-both ml-8">
+                      <div className="float-right mb-3 overflow-auto rounded-lg py-3 px-4 bg-[#3B82F6] text-white">
+                        <p>
+                          I need some information about product marketing and
+                          advertisement?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 sm:mt-8 bottom-[56px] left-0 w-full">
+                    <ChatInput onSend={() => {}} />
+                  </div>
+                </div>
+                {/* <Chat
                   loading={false}
                   messages={[
                     {
@@ -381,7 +401,7 @@ const Settings = () => {
                   ]}
                   onReset={() => {}}
                   onSend={() => {}}
-                />
+                /> */}
               </div>
             </div>
             <div className="flex justify-end">
