@@ -138,7 +138,7 @@ const FileUpload = ({ changeOption }: Props) => {
               };
 
               // Read the file as a Data URL
-              reader.readAsDataURL(e.target.files[0]);
+              if (e.target.files) reader.readAsDataURL(e.target.files[0]);
             }}></input>
           <p
             className="mt-1 text-sm text-center text-gray-500 dark:text-gray-300"
