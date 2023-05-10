@@ -54,9 +54,9 @@ const Settings = () => {
               <div className="mt-1">
                 <textarea
                   name="intructions"
-                  rows="5"
-                  class="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
-                  maxlength="3000">
+                  rows={5}
+                  className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
+                  maxLength={3000}>
                   I want you to act as a document that I am having a
                   conversation with. Your name is &quot;AI Assistant&quot;. You
                   will provide me with answers from the given info. If the
