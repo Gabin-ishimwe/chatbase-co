@@ -1,3 +1,4 @@
+import { Chat } from "@/components/Chat/Chat";
 import ChatBotLayout from "@/components/ChatBotLayout";
 import React from "react";
 import { SketchPicker } from "react-color";
@@ -365,6 +366,32 @@ const Settings = () => {
                   seconds (negative to disable)
                 </div>
               </div>
+              <div className="flex-1">
+                <Chat
+                  loading={false}
+                  messages={[
+                    {
+                      role: "assistant",
+                      content: `Hi there! I'm Chatbot UI, an AI assistant. I can help you with things like answering questions, providing information, and helping with tasks. How can I help you?`,
+                    },
+                    {
+                      role: "user",
+                      content: "Hello there!",
+                    },
+                  ]}
+                  onReset={() => {}}
+                  onSend={() => {}}
+                />
+              </div>
+            </div>
+            <div className="flex justify-end">
+              <button
+                data-variant="flat"
+                className="rounded-md py-2 font-medium text-white text-center bg-black px-4"
+                type="button">
+                {" "}
+                Save changes
+              </button>
             </div>
           </div>
         </ChatBotLayout>
