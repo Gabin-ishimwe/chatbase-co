@@ -13,11 +13,11 @@ const NavBar = () => {
 
   const navigation = [
     { name: "Demo", href: "#" },
-    { name: "Pricing", href: "pricing" },
-    { name: "Featured Bots", href: "featured-bots" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Featured Bots", href: "/featured-bots" },
     {
       name: "My ChatBots",
-      href: "my-chatbots?token=" + encodeURIComponent(token),
+      href: "/my-chatbots",
     },
   ];
   useEffect(() => {

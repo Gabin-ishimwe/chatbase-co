@@ -20,10 +20,7 @@ const TextUpload = ({ changeOption }: Props) => {
     onSuccess: (data, variables, context) => {
       if (data.message == "Chatbot created") {
         console.log(data);
-        route.push(
-          "/my-chatbots?token=" +
-            encodeURIComponent(localStorage.getItem("AUTH_TOKEN") as string)
-        );
+        route.push("/my-chatbots");
       } else {
         setToastMessage((msg) => (msg = data.message));
         setToastColor(false);
