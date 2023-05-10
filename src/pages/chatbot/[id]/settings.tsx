@@ -1,6 +1,16 @@
 import ChatBotLayout from "@/components/ChatBotLayout";
+import React from "react";
+import { SketchPicker } from "react-color";
+import { AiFillCaretDown } from "react-icons/ai";
 
 const Settings = () => {
+  const [color, setColor] = React.useState("#3b82f6");
+  const [showPicker, setShowPicker] = React.useState(false);
+  const handleChangeColor = (value: any) => {
+    console.log(value);
+    setColor(value.hex);
+    console.log(value.hex);
+  };
   return (
     <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl w-full m-auto">
@@ -161,6 +171,200 @@ const Settings = () => {
                 name="ip_limit_message"
                 className="min-w-0 p-1 mt-1 px-2 w-full rounded-md border border-zinc-900/10 bg-white shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
                 value="Too many messages in a row"></input>
+            </div>
+            <h4 className="mt-5 font-semibold text-lg">Chat Interface</h4>
+            <h4 className="mb-8 text-sm text-zinc-600">
+              applies when embedded on a website
+            </h4>
+            <div className="flex justify-between space-x-8 flex-col sm:flex-row">
+              <div className="flex-1">
+                <div className="pb-8">
+                  <div className="flex justify-between">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Initial Messages
+                    </label>
+                    <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto">
+                      Reset
+                    </button>
+                  </div>
+                  <div className="mt-1">
+                    <textarea
+                      name="initial_messages"
+                      className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
+                      maxLength={1000}>
+                      Hi! What can I help you with?
+                    </textarea>
+                    <p className="mt-2 text-sm text-zinc-500">
+                      Enter each message in a new line.
+                    </p>
+                  </div>
+                </div>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Suggested Messages
+                  </label>
+                  <div className="mt-1">
+                    <textarea
+                      name="suggested_messages"
+                      placeholder="What is example.com?,How does it work?"
+                      className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"></textarea>
+                    <p className="mt-2 text-sm text-zinc-500">
+                      Enter each message in a new line.
+                    </p>
+                  </div>
+                </div>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Theme
+                  </label>
+                  <select
+                    id="theme"
+                    name="theme"
+                    className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900">
+                    <option value="light" selected>
+                      light
+                    </option>
+                    <option value="dark">dark</option>
+                  </select>
+                </div>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Update chatbot profile picture
+                  </label>
+                  <input
+                    id="bot_profile_picture"
+                    type="file"
+                    accept="image/*"
+                    name="bot_profile_picture"
+                    className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"></input>
+                </div>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Remove Chatbot Profile Picture
+                  </label>
+                  <input
+                    type="checkbox"
+                    name="should_remove_bot_profile_picture"
+                    className="h-4 w-4 rounded border-gray-300 text-violet-600 focus:ring-violet-600"></input>
+                </div>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Display name
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      type="text"
+                      name="name"
+                      className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div className="pb-8">
+                  <div className="flex justify-between">
+                    <label className="block text-sm font-medium text-gray-700">
+                      User Message Color
+                    </label>
+                    <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto">
+                      Reset
+                    </button>
+                  </div>
+
+                  <div
+                    onClick={() => setShowPicker(!showPicker)}
+                    className="relative inline-flex items-center space-x-1 rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto hover:cursor-pointer">
+                    <div
+                      className={`w-[50px] h-[50px] rounded-md`}
+                      style={{ backgroundColor: color }}></div>
+                    <AiFillCaretDown />
+                  </div>
+                  {showPicker && (
+                    <div className="absolute pt-2 transation ease-in-out">
+                      <SketchPicker
+                        color={color}
+                        onChange={handleChangeColor}
+                      />
+                    </div>
+                  )}
+                </div>
+                <p className="text-sm text-zinc-900 pt-12 pb-10">
+                  **If the changes here don&apos;t show up immediately on your
+                  website try clearing your browser cache or use incognito. (New
+                  users will see the changes immediately)**
+                </p>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Update chat icon
+                  </label>
+                  <input
+                    id="chat_icon"
+                    type="file"
+                    accept="image/*"
+                    name="bot_profile_picture"
+                    className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
+                  />
+                </div>
+                <div className="pb-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Remove chat icon
+                  </label>
+                  <input
+                    type="checkbox"
+                    name="should_remove_bot_profile_picture"
+                    className="h-4 w-4 rounded border-gray-300 text-violet-600 focus:ring-violet-600"
+                  />
+                </div>
+                <div className="pb-8">
+                  <div className="flex justify-between">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Chat Bubble Button Color
+                    </label>
+                    <button className="inline-flex items-center justify-center rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto">
+                      Reset
+                    </button>
+                  </div>
+                  <div
+                    onClick={() => setShowPicker(!showPicker)}
+                    className="relative inline-flex items-center space-x-1 rounded-md border border-transparent bg-zinc-200 py-1 px-2 text-sm font-medium text-black shadow-sm hover:bg-zinc-300 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto hover:cursor-pointer">
+                    <div
+                      className={`w-[50px] h-[50px] rounded-md`}
+                      style={{ backgroundColor: color }}></div>
+                    <AiFillCaretDown />
+                  </div>
+                  {showPicker && (
+                    <div className="absolute pt-2 transation ease-in-out">
+                      <SketchPicker
+                        color={color}
+                        onChange={handleChangeColor}
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="pb-8">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Align Chat Bubble Button
+                  </label>
+                  <select
+                    id="theme"
+                    name="theme"
+                    className="min-w-0 p-1 flex-auto w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900">
+                    <option value="right" selected>
+                      right
+                    </option>
+                    <option value="left">left</option>
+                  </select>
+                </div>
+                <div className="mt-1 text-sm text-zinc-700">
+                  Auto show initial messages after{" "}
+                  <input
+                    name="auto_open_chat_window_after"
+                    type="number"
+                    className="min-w-0 p-1 px-2 rounded-md border border-zinc-900/10 bg-white shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm text-gray-900"
+                    value="3"
+                  />
+                  seconds (negative to disable)
+                </div>
+              </div>
             </div>
           </div>
         </ChatBotLayout>
