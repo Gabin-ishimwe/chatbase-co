@@ -11,6 +11,29 @@ const ChatBotLayout = ({
   result: any;
 }) => {
   const router = useRouter();
+  const id = router.query.id;
+  const [token, setToken] = React.useState("");
+  const [data, setData] = React.useState<any>();
+  // const fetchBotQuery = useQuery({
+  //   queryKey: ["oneUserBots", token],
+  //   queryFn: () => fetchOneUserBot({ token: token, id: id as string }),
+  //   onSuccess: (res) => {
+  //     console.log("data fetched ", res);
+  //     if (res.message == "User bot") {
+  //       setData({
+  //         data: res,
+  //         error: null,
+  //       });
+  //       console.log("new data", data);
+  //     } else {
+  //       setData({
+  //         data: null,
+  //         error: res,
+  //       });
+  //     }
+  //   },
+  // });
+
   const botId = router.query.id;
   const navItems = [
     {
@@ -30,6 +53,10 @@ const ChatBotLayout = ({
       path: `/chatbot/${botId}/manage-source`,
     },
   ];
+  React.useEffect(() => {
+    if (!localStorage.getItem("AUTH_TOKEN")) router.push("/signin");
+    setToken(localStorage.getItem("AUTH_TOKEN") as string);
+  }, []);
   return (
     <ChatContext.Provider value={result}>
       <div className="max-w-4xl w-full m-auto">
@@ -82,6 +109,7 @@ export const getServerSideProps = async (context: any) => {
     }
   );
   const data = await res.json();
+  console.log("server----", data);
   if (data.message === "User bot")
     return {
       props: {

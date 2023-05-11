@@ -6,8 +6,8 @@ import user2 from "../../public/images/user-photo2.png";
 
 const FeaturedBots = () => {
   return (
-    <div className="pt-14 pb-72">
-      <div className="max-w-3xl w-full m-auto flex justify-between items-center">
+    <div className="pt-14">
+      <div className="max-w-3xl w-full m-auto flex justify-center items-center">
         <h1 className=" text-2xl md:text-3xl font-extrabold text-black">
           Featured Chatbots
         </h1>

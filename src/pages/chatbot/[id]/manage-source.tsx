@@ -1,4 +1,5 @@
 import ChatBotLayout from "@/components/ChatBotLayout";
+import { AiFillDelete } from "react-icons/ai";
 
 const ManagedSource = () => {
   return (
@@ -43,6 +44,30 @@ const ManagedSource = () => {
                   OCR&apos;d, i.e. you can copy it.
                 </p>
               </div>
+              <div className="pt-8">
+                <p className="font-semibold">Arleady included files:</p>
+                <div className="flex justify-between space-x-3">
+                  <p>
+                    Evelyne Umubyeyi_Gabin Ishimwe_Adrine Uwera_Emile
+                    Kamana_final_project.pdf{" "}
+                    <span className="text-zinc-500 text-sm">(1513 chars)</span>
+                  </p>
+                  <AiFillDelete className="text-red-600 text-3xl hover:cursor-pointer" />
+                </div>
+              </div>
+            </div>
+            <div className=" mt-8 max-w-lg m-auto p-4 rounded border">
+              <div className=" ">Included sources:</div>
+              <p className="py-1 text-sm text-zinc-700">
+                1 Files (1513 chars){" "}
+              </p>
+              <button
+                data-variant="flat"
+                className="rounded-md py-2 font-medium text-white text-center bg-black px-4 mt-4 w-full"
+                type="button">
+                {" "}
+                Retrain Chatbot
+              </button>
             </div>
           </div>
         </ChatBotLayout>

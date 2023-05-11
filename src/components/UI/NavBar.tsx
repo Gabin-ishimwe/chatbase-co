@@ -9,19 +9,20 @@ const inter = Inter({ subsets: ["latin"] });
 
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(false);
 
   const navigation = [
-    { name: "Demo", href: "#" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Featured Bots", href: "/featured-bots" },
+    // { name: "Demo", href: "#" },
+    { name: "Pricing", href: "/pricing", isLogged: false },
+    { name: "Featured Bots", href: "/featured-bots", isLogged: false },
     {
       name: "My ChatBots",
       href: "/my-chatbots",
+      isLogged: true,
     },
   ];
   useEffect(() => {
-    setToken(localStorage.getItem("AUTH_TOKEN") as string);
+    setToken(!!localStorage.getItem("AUTH_TOKEN"));
   }, [token]);
 
   return (
@@ -51,14 +52,18 @@ const NavBar = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900">
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+            if (!token && item.isLogged) return;
+            // if (token && !item.isLogged) return;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-gray-900">
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
@@ -78,11 +83,11 @@ const NavBar = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
+              {/* <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
-              />
+              /> */}
             </a>
             <button
               type="button"
