@@ -3,7 +3,7 @@ import Image from "next/image";
 const Testimonials = () => {
   return (
     <div className="relative isolate bg-white pt-24 pb-32 sm:pt-32">
-      <div className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl">
+      {/* <div className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl">
         <svg
           viewBox="0 0 1313 771"
           aria-hidden="true"
@@ -25,15 +25,15 @@ const Testimonials = () => {
             </linearGradient>
           </defs>
         </svg>
-      </div>
-      <div className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end">
+      </div> */}
+      {/* <div className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end">
         <svg
           viewBox="0 0 1313 771"
           aria-hidden="true"
           className="ml-[-22rem] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] xl:ml-0 xl:mr-[calc(50%-12rem)]">
           <use href="#bc169a03-3518-42d4-ab1e-d3eadac65edc"></use>
         </svg>
-      </div>
+      </div> */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
