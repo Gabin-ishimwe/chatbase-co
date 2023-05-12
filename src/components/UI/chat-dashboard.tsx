@@ -4,7 +4,12 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import React from "react";
 
-const ChatDashoard = () => {
+type Props = {
+  messageColor?: string;
+  bgColor: string;
+};
+
+const ChatDashoard = ({ messageColor, bgColor }: Props) => {
   const [messages, setMessages] = React.useState<any>([
     {
       role: "assistant",
@@ -105,6 +110,8 @@ const ChatDashoard = () => {
           messages={messages}
           onSend={handleSend}
           onReset={handleReset}
+          messageColor={messageColor}
+          bgColor={bgColor}
         />
         {/* <div ref={messagesEndRef} /> */}
       </div>

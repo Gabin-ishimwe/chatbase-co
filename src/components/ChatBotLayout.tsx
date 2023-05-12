@@ -11,30 +11,8 @@ const ChatBotLayout = ({
   result: any;
 }) => {
   const router = useRouter();
-  const id = router.query.id;
-  const [token, setToken] = React.useState("");
-  const [data, setData] = React.useState<any>();
-  // const fetchBotQuery = useQuery({
-  //   queryKey: ["oneUserBots", token],
-  //   queryFn: () => fetchOneUserBot({ token: token, id: id as string }),
-  //   onSuccess: (res) => {
-  //     console.log("data fetched ", res);
-  //     if (res.message == "User bot") {
-  //       setData({
-  //         data: res,
-  //         error: null,
-  //       });
-  //       console.log("new data", data);
-  //     } else {
-  //       setData({
-  //         data: null,
-  //         error: res,
-  //       });
-  //     }
-  //   },
-  // });
-
   const botId = router.query.id;
+  const [token, setToken] = React.useState("");
   const navItems = [
     {
       name: "chat",
