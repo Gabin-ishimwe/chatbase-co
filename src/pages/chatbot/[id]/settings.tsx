@@ -72,6 +72,8 @@ const Settings = () => {
     ] as never);
     const keys = Object.keys(state.data);
 
+    console.log(formData);
+
     updateBotMutation.mutate({
       token,
       body: formData,
