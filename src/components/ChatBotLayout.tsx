@@ -12,6 +12,7 @@ const ChatBotLayout = ({
 }) => {
   const router = useRouter();
   const botId = router.query.id;
+  const [token, setToken] = React.useState("");
   const navItems = [
     {
       name: "chat",
@@ -30,6 +31,10 @@ const ChatBotLayout = ({
       path: `/chatbot/${botId}/manage-source`,
     },
   ];
+  React.useEffect(() => {
+    if (!localStorage.getItem("AUTH_TOKEN")) router.push("/signin");
+    setToken(localStorage.getItem("AUTH_TOKEN") as string);
+  }, []);
   return (
     <ChatContext.Provider value={result}>
       <div className="max-w-4xl w-full m-auto">
@@ -82,6 +87,7 @@ export const getServerSideProps = async (context: any) => {
     }
   );
   const data = await res.json();
+  console.log("server----", data);
   if (data.message === "User bot")
     return {
       props: {
