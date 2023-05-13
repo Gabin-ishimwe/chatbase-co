@@ -1,4 +1,4 @@
-import { fetchOneUserBot } from "@/api/chatBots";
+import { deleteOneUserBot, fetchOneUserBot } from "@/api/chatBots";
 import { getObjectAsFormData, updateChatbot } from "@/api/updateChatBot";
 import { ChatInput } from "@/components/Chat/ChatInput";
 import { ChatContext } from "@/components/ChatBotLayout";
@@ -67,6 +67,23 @@ const Settings = () => {
         setToastMessage((msg) => (msg = data.message));
         setToastColor(false);
         setToast(true);
+      }
+    },
+  });
+  const deleteBotMutation = useMutation({
+    mutationFn: deleteOneUserBot,
+    onSuccess: (data) => {
+      if (data.message == "Chatbot deleted") {
+        // send toast
+        // setToastMessage((msg) => (msg = data.message));
+        // setToastColor(true);
+        // setToast(true);
+        route.push("/my-chatbots");
+      } else {
+        // bad toast
+        setToastMessage((msg) => (msg = data.message));
+        setToastColor(false);
+        setToast(true);
         console.log("req", data);
       }
     },
@@ -82,9 +99,6 @@ const Settings = () => {
       "chatbotId",
       "embeddingCode",
     ] as never);
-    const keys = Object.keys(state.data);
-
-    console.log(formData);
 
     updateBotMutation.mutate({
       token,
@@ -116,9 +130,6 @@ const Settings = () => {
     dispatch({ type: "CHANGE_MESSAGE_COLOR", payload: value.hex });
     setColor(value.hex);
   };
-  React.useEffect(() => {
-    console.log("new state", state);
-  }, [state]);
   React.useEffect(() => {
     if (!localStorage.getItem("AUTH_TOKEN")) route.push("/signin");
     setToken(localStorage.getItem("AUTH_TOKEN") as string);
@@ -165,7 +176,14 @@ const Settings = () => {
           </div>
         </div>
       )}
-      <DeleteChatbot isOpen={deleteModal} closeModal={handleDeleteModal} />
+      <DeleteChatbot
+        isOpen={deleteModal}
+        closeModal={handleDeleteModal}
+        onDelete={() => {
+          deleteBotMutation.mutate({ token, id: botId as string });
+        }}
+        mutationFn={deleteBotMutation}
+      />
       <ShareChatbot isOpen={shareModal} closeModal={handleShareModal} />
       <div className="max-w-4xl w-full m-auto">
         <div className="flex justify-center pb-8">

@@ -4,9 +4,16 @@ import { Fragment } from "react";
 type Props = {
   closeModal: () => void;
   isOpen: boolean;
+  onDelete: () => void;
+  mutationFn: any;
 };
 
-export default function DeleteChatbot({ isOpen, closeModal }: Props) {
+export default function DeleteChatbot({
+  isOpen,
+  closeModal,
+  onDelete,
+  mutationFn,
+}: Props) {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -64,8 +71,9 @@ export default function DeleteChatbot({ isOpen, closeModal }: Props) {
                   <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                     <button
                       type="button"
+                      onClick={onDelete}
                       className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
-                      Delete
+                      {mutationFn.isLoading ? "Deleting..." : "Delete"}
                     </button>
                     <button
                       type="button"

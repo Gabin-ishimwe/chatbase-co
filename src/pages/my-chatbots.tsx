@@ -107,7 +107,7 @@ const MyChatBot = () => {
                       />
                       <div className="px-1">
                         <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                          {bot.user.firstName + " " + bot.user.lastName}
+                          {bot.name}
                         </h3>
                       </div>
                     </div>
