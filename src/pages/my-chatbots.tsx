@@ -1,28 +1,25 @@
 import { fetchUserChatBots } from "@/api/chatBots";
+import AuthComponent from "@/components/AuthComponent";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
 
-const MyChatBot = () => {
-  const route = useRouter();
-  const [token, setToken] = React.useState("");
+const MyChatBot = (props: any) => {
   const [data, setData] = React.useState<any>([]);
   const [toast, setToast] = React.useState(false);
   const changeToast = () => setToast((toast) => (toast = false));
   const [toastMessage, setToastMessage] = React.useState("");
   const myChatBotQuery = useQuery({
-    queryKey: ["userChatBots", token],
-    // enabled: token != "",
-    queryFn: () => fetchUserChatBots({ token: token as unknown as string }),
+    queryKey: ["userChatBots", props.token],
+    queryFn: () =>
+      fetchUserChatBots({ token: props.token as unknown as string }),
     onSuccess: (res) => {
       if (res.message == "All chatbots") {
         console.log(res);
         setData(res.data);
         console.log("new data", data);
       } else {
-        // call toasters
         console.log("here---", res);
         setToast(true);
         setToastMessage(res.message);
@@ -30,12 +27,6 @@ const MyChatBot = () => {
       }
     },
   });
-
-  React.useEffect(() => {
-    if (!localStorage.getItem("AUTH_TOKEN")) route.push("/signin");
-    setToken(localStorage.getItem("AUTH_TOKEN") as string);
-  }, []);
-
   return (
     <div className="pt-14 pb-72">
       {toast && (
@@ -172,4 +163,4 @@ const MyChatBot = () => {
 //   };
 // }
 
-export default MyChatBot;
+export default AuthComponent(MyChatBot);
