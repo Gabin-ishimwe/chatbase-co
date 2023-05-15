@@ -39,3 +39,51 @@ export const fetchOneUserBot = async ({
     return error;
   }
 };
+
+export const deleteOneUserBot = async ({
+  token,
+  id,
+}: {
+  token: string;
+  id: string;
+}) => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/chatbot/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const shareChatBot = async ({
+  token,
+  id,
+}: {
+  token: string;
+  id: string;
+}) => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/chatbot/share/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
