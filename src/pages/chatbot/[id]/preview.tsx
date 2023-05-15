@@ -4,12 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import React from "react";
 
-type Props = {
-  messageColor?: string;
-  bgColor: string;
-};
-
-const ChatDashoard = ({ messageColor, bgColor }: Props) => {
+const Preview = () => {
   const [messages, setMessages] = React.useState<any>([
     {
       role: "assistant",
@@ -69,7 +64,7 @@ const ChatDashoard = ({ messageColor, bgColor }: Props) => {
   };
   return (
     <>
-      <div className="relative">
+      <div className="w-full">
         {toast && (
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
             <div
@@ -110,13 +105,12 @@ const ChatDashoard = ({ messageColor, bgColor }: Props) => {
           messages={messages}
           onSend={handleSend}
           onReset={handleReset}
-          messageColor={messageColor}
-          bgColor={bgColor}
+          messageColor={"#3b82f6"}
+          bgColor={"light"}
         />
-        {/* <div ref={messagesEndRef} /> */}
       </div>
     </>
   );
 };
 
-export default ChatDashoard;
+export default Preview;

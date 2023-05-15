@@ -4,9 +4,11 @@ import { Fragment, useState } from "react";
 type Props = {
   closeModal: () => void;
   isOpen: boolean;
+  share: () => void;
+  mutationFn: any;
 };
 
-const ShareChatbot = ({ isOpen, closeModal }: Props) => {
+const ShareChatbot = ({ isOpen, closeModal, share, mutationFn }: Props) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -66,8 +68,9 @@ const ShareChatbot = ({ isOpen, closeModal }: Props) => {
                   <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                     <button
                       type="button"
+                      onClick={share}
                       className="inline-flex w-full justify-center rounded-md border border-transparent bg-violet-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">
-                      Make Public
+                      {mutationFn.isLoading ? "Processing..." : "Make Public"}
                     </button>
                     <button
                       type="button"

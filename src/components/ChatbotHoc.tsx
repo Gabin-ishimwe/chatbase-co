@@ -1,9 +1,14 @@
-import { deleteOneUserBot, fetchOneUserBot } from "@/api/chatBots";
+import {
+  deleteOneUserBot,
+  fetchOneUserBot,
+  shareChatBot,
+} from "@/api/chatBots";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import DeleteChatbot from "./UI/DeleteChatbot";
+import ShareBotModal from "./UI/ShareBotModal";
 import ShareChatbot from "./UI/ShareChatbot";
 
 const ChatbotHoc = (Component: any) => {
@@ -34,12 +39,16 @@ const ChatbotHoc = (Component: any) => {
     const changeToast = () => setToast((toast) => (toast = false));
     const [deleteModal, setDeleteModal] = React.useState(false);
     const [shareModal, setShareModal] = React.useState(false);
+    const [publicModal, setPublicModal] = React.useState(false);
     const [toastMessage, setToastMessage] = React.useState("");
     const handleDeleteModal = () => {
       setDeleteModal(false);
     };
     const handleShareModal = () => {
       setShareModal(false);
+    };
+    const handlePublicModal = () => {
+      setPublicModal(false);
     };
     const fetchBotQuery = useQuery({
       queryKey: ["oneUserBots", token],
@@ -58,6 +67,21 @@ const ChatbotHoc = (Component: any) => {
       onSuccess: (data) => {
         if (data.message == "Chatbot deleted") {
           route.push("/my-chatbots");
+        } else {
+          // bad toast
+          setToastMessage((msg) => (msg = data.message));
+          setToastColor(false);
+          setToast(true);
+          console.log("req", data);
+        }
+      },
+    });
+    const shareBotMutation = useMutation({
+      mutationFn: shareChatBot,
+      onSuccess: (data) => {
+        if (data.message == "Bot shared public") {
+          setShareModal(false);
+          setPublicModal(true);
         } else {
           // bad toast
           setToastMessage((msg) => (msg = data.message));
@@ -119,7 +143,25 @@ const ChatbotHoc = (Component: any) => {
           }}
           mutationFn={deleteBotMutation}
         />
-        <ShareChatbot isOpen={shareModal} closeModal={handleShareModal} />
+
+        <ShareChatbot
+          isOpen={shareModal}
+          closeModal={handleShareModal}
+          share={() => {
+            shareBotMutation.mutate({
+              token: token,
+              id: botId as string,
+            });
+          }}
+          mutationFn={shareBotMutation}
+        />
+        <ShareBotModal
+          isOpen={publicModal}
+          closeModal={handlePublicModal}
+          url={
+            process.env.NEXT_PUBLIC_FRONTEND_URL + `/chatbot/${botId}/preview`
+          }
+        />
         <div className="max-w-4xl w-full m-auto">
           <div className="flex justify-center pb-8">
             <div>
