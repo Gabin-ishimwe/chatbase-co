@@ -36,10 +36,9 @@ export const Chat: FC<Props> = ({
       </div>
 
       <div
-        className={`relative flex flex-col justify-between rounded-lg px-2 sm:p-4 sm:border min-h-[200px] overflow-auto border-neutral-300 ${
+        className={`relative flex flex-col justify-between rounded-lg px-2 sm:p-4 sm:border min-h-[300px] overflow-auto border-neutral-300 ${
           bgColor == "light" ? "bg-white" : "bg-black"
         }`}
-        // style={{ backgroundColor: bgColor }}
         id="move">
         {messages.map((message: any, index: any) => (
           <div key={index} className="my-1 sm:my-1.5">
