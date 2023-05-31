@@ -39,7 +39,7 @@ const NavBar = () => {
           />
         </a> */}
           <Link href={"/"} className="text-2xl font-bold">
-            Chatbase Co
+            Giraffes
           </Link>
         </div>
         <div className="flex lg:hidden">
