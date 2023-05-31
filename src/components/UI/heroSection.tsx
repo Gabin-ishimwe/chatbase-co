@@ -18,9 +18,9 @@ const HeroSection = () => {
         <div className="flex items-center justify-center">
           <div className="text-center w-[38rem]">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Mind-blowing {" "}
+              Mind-blowing custom {" "}
               <span className="text-transparent bg-clip-text bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-purple-200 via-violet-700 to-rose-700">
-                custom AI personalities
+                AI personalities
               </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
