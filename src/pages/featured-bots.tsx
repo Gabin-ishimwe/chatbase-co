@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import graham from "../../public/images/quran.png";
-import user1 from "../../public/images/user-photo1.png";
-import user2 from "../../public/images/user-photo2.png";
+import graham from "../../public/images/Quron.PNG";
+import user1 from "../../public/images/user1.PNG";
+import user2 from "../../public/images/user2.PNG";
+import user3 from "../../public/images/Batman-Logo-1939.png";
 
 const FeaturedBots = () => {
   return (
@@ -25,7 +26,7 @@ const FeaturedBots = () => {
               />
               <div className=" px-1">
                 <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                  Paul Graham
+                  ContentIQ
                 </h3>
               </div>
             </div>
@@ -41,7 +42,7 @@ const FeaturedBots = () => {
               />
               <div className=" px-1">
                 <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                  Paul Graham
+                  Marketinsights
                 </h3>
               </div>
             </div>
@@ -57,7 +58,7 @@ const FeaturedBots = () => {
               />
               <div className=" px-1">
                 <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                  Paul Graham
+                  Humor
                 </h3>
               </div>
             </div>
@@ -65,7 +66,7 @@ const FeaturedBots = () => {
           <Link href={"#"}>
             <div className=" flex flex-col justify-between h-full border rounded relative">
               <Image
-                src={graham}
+                src={user2}
                 width={200}
                 height={282}
                 className="border-none m-auto p-4"
@@ -73,7 +74,7 @@ const FeaturedBots = () => {
               />
               <div className=" px-1">
                 <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                  Paul Graham
+                  Retaildata
                 </h3>
               </div>
             </div>
@@ -81,7 +82,7 @@ const FeaturedBots = () => {
           <Link href={"#"}>
             <div className=" flex flex-col justify-between h-full border rounded relative">
               <Image
-                src={graham}
+                src={user3}
                 width={200}
                 height={282}
                 className="border-none m-auto p-4"
@@ -89,7 +90,7 @@ const FeaturedBots = () => {
               />
               <div className=" px-1">
                 <h3 className="text-xs md:text-sm my-2 font-semibold text-center overflow-hidden">
-                  Paul Graham
+                  Financehat
                 </h3>
               </div>
             </div>
