@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import graham from "../../public/images/Quron.png";
-import user1 from "../../public/images/user1.png";
-import user2 from "../../public/images/user2.png";
+import graham from "../../public/images/Batman-Logo-1939.png";
+import user1 from "../../public/images/Batman-Logo-1939.png";
+import user2 from "../../public/images/Batman-Logo-1939.png";
 import user3 from "../../public/images/Batman-Logo-1939.png";
 
 const FeaturedBots = () => {
