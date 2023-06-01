@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <HeroSection />
       <FeaturedBots />
-      <FaQs />
+      //<FaQs />
       <Testimonials />
     </>
   );
