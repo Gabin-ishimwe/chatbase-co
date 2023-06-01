@@ -24,9 +24,9 @@ const HeroSection = () => {
               </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Just upload a document or add a link to your website and get a
+              {/* Just upload a document or add a link to your website and get a
               ChatGPT-like chatbot that can answer any question on it. Then add
-              a chat widget to your website.
+              a chat widget to your website. */}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
